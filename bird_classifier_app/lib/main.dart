@@ -70,9 +70,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text("Bird Classifier"),
+        title: Text(
+            "Bird Classifier",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.amber,
+            ),
+        ),
         centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
       body: Container(
         child: Column(
@@ -96,22 +105,121 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
                   height: 350,
                   width: 350,
-                  color: Colors.grey[300],
+                  color: Colors.grey[600],
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Please select and image"),
+                    child: Text("Please select an image"),
                   ),
             ),
-            Text("Name:$_name\nConfidence: $_confidence"),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                    "Name: ",
+                    style: TextStyle(
+                      color: Colors.amberAccent[200],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    )
+                ),
+                Text(
+                  "$_name",
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                    "Confidence: ",
+                    style: TextStyle(
+                      color: Colors.amberAccent[200],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    )
+                ),
+                Text(
+                  "$_confidence",
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+           ),
+            SizedBox(
+              height: 20,
+            ),
+            FlatButton(
+              minWidth: 200,
+              onPressed: () {
+                applyModelOnImage(File(_pickedFile!.path));
+              },
+              child: Text(
+                  "Predict",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                )
+              ),
+              color: Colors.blue,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              width: 200,
+              child: RaisedButton(
+                onPressed: () {},
+                child: Text(
+                  "Data Used",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                color: Colors.blue,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              width: 200,
+              child: RaisedButton(
+                onPressed: () {},
+                child: Text(
+                  "Model Architecture",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                color: Colors.blue,
+              ),
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _pickImage();
-          applyModelOnImage(File(_pickedFile!.path));
         },
         child: Icon(Icons.photo_album),
+        backgroundColor: Colors.amberAccent[400],
       ),
     );
   }
