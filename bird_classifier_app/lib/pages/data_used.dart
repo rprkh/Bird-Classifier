@@ -65,7 +65,7 @@ class _DataUsedState extends State<DataUsed> {
                     )
                 ),
                 Text(
-                  "58388 Images",
+                  "58,388 Images",
                   style: TextStyle(
                     color: Colors.white70,
                     fontSize: 20,
@@ -87,7 +87,7 @@ class _DataUsedState extends State<DataUsed> {
                     )
                 ),
                 Text(
-                  "2000 Images",
+                  "2,000 Images",
                   style: TextStyle(
                     color: Colors.white70,
                     fontSize: 20,
@@ -109,7 +109,7 @@ class _DataUsedState extends State<DataUsed> {
                     )
                 ),
                 Text(
-                  "2000 Images",
+                  "2,000 Images",
                   style: TextStyle(
                     color: Colors.white70,
                     fontSize: 20,

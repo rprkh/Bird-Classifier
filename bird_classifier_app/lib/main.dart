@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _result = res;
       String? str = _result?[0]["label"];
-      _name = str?.substring(2);
+      _name = str?.substring(str.length - (str.length - 3));
       _confidence = _result != null ? (_result?[0]["confidence"] * 100.0).toString().substring(0, 2) + "%": "";
       print("Name: $_name\nConfidence: $_confidence");
     });
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         child: Column(
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 25),
             _pickedFile != null
             ? Center(
               child: Container(
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
               ),
             )
                 : Container(
-                  padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                   height: 350,
                   width: 350,
                   color: Colors.grey[600],
@@ -118,7 +118,13 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.center,
                     child: Padding(
                         padding: EdgeInsets.fromLTRB(0, 0, 50, 0),
-                        child: Text("Please select an image"),
+                        child: Text(
+                            "Please select an image",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                        ),
                     ),
                   ),
             ),
