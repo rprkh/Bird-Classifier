@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
+import 'package:bird_classifier_app/pages/data_used.dart';
+import 'package:bird_classifier_app/pages/model_architecture.dart';
 
 void main() => runApp(MaterialApp(
   home: HomePage(),
+  routes: {
+    '/': (context) => HomePage(),
+    '/dataUsed': (context) => DataUsed(),
+    '/modelArchitecture': (context) => ModelArchitecture(),
+  },
 ));
 
 class HomePage extends StatefulWidget {
@@ -108,7 +115,10 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey[600],
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Please select an image"),
+                    child: Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 50, 0),
+                        child: Text("Please select an image"),
+                    ),
                   ),
             ),
             SizedBox(
@@ -181,7 +191,14 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               width: 200,
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                      builder: (context) => new DataUsed(),
+                    ),
+                  );
+                },
                 child: Text(
                   "Data Used",
                   style: TextStyle(
@@ -199,7 +216,14 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               width: 200,
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                      builder: (context) => new ModelArchitecture(),
+                    ),
+                  );
+                },
                 child: Text(
                   "Model Architecture",
                   style: TextStyle(
