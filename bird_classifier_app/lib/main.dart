@@ -7,7 +7,7 @@ import 'package:bird_classifier_app/pages/data_used.dart';
 import 'package:bird_classifier_app/pages/model_architecture.dart';
 
 void main() => runApp(MaterialApp(
-  home: HomePage(),
+  initialRoute: '/',
   routes: {
     '/': (context) => HomePage(),
     '/dataUsed': (context) => DataUsed(),
@@ -84,6 +84,7 @@ class _HomePageState extends State<HomePage> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.amber,
+              fontSize: 25,
             ),
         ),
         centerTitle: true,
