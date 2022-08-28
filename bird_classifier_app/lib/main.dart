@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'package:tflite/tflite.dart';
 
 void main() => runApp(MaterialApp(
   home: HomePage(),
@@ -20,7 +21,12 @@ class _HomePageState extends State<HomePage> {
   PickedFile? _pickedFile;
   final _picker = ImagePicker();
 
-  Future<void> _pickImage() async {
+  List? _result;
+  String? _confidence = "";
+  String? _name = "";
+  String? numbers = "";
+
+  _pickImage() async {
     _pickedFile = await _picker.getImage(source: ImageSource.gallery);
     if(_pickedFile != null) {
       setState(() {
@@ -29,48 +35,84 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  loadMyModel() async {
+    var resultant = await Tflite.loadModel(
+      labels: "assets/labels.txt",
+      model: "assets/bird_classifier.tflite"
+    );
+    print("Result after loading the model: $resultant");
+  }
+
+  applyModelOnImage(File file) async {
+    var res = await Tflite.runModelOnImage(
+        path: file.path,
+        numResults: 400,
+        threshold: 0.5,
+        imageMean: 127.5,
+        imageStd: 127.5
+    );
+
+    setState(() {
+      _result = res;
+      String? str = _result?[0]["label"];
+      _name = str?.substring(2);
+      _confidence = _result != null ? (_result?[0]["confidence"] * 100.0).toString().substring(0, 2) + "%": "";
+      print("Name: $_name\nConfidence: $_confidence");
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadMyModel();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bird Classifier'),
+        title: Text("Bird Classifier"),
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(35),
-          child: Column(children: [
-            Center(
-              child: GestureDetector(
-                child: const Text(
-                    'Click to Select an image',
-                    style: TextStyle(fontSize: 20),
+      body: Container(
+        child: Column(
+          children: [
+            SizedBox(height: 50),
+            _pickedFile != null
+            ? Center(
+              child: Container(
+                height: 350,
+                width: 350,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: FileImage(File(_pickedFile!.path)),
+                    fit: BoxFit.contain
+                  ),
                 ),
-                onTap: ()=>_pickImage(),
+
               ),
+            )
+                : Container(
+                  padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                  height: 350,
+                  width: 350,
+                  color: Colors.grey[300],
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text("Please select and image"),
+                  ),
             ),
-            const SizedBox(height: 35),
-            Container(
-              alignment: Alignment.center,
-              color: Colors.grey[300],
-              width: 300,
-              height: 300,
-              child: _pickedFile != null
-                ? Image.file(
-                File(_pickedFile!.path),
-                width: 300,
-                height: 300,
-                fit: BoxFit.cover
-              )
-                  : const Text('Please select an image'),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text('Image must be of dimensions 150 x 150 x 3'),
-          ])
-        )
-      )
+            Text("Name:$_name\nConfidence: $_confidence"),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _pickImage();
+          applyModelOnImage(File(_pickedFile!.path));
+        },
+        child: Icon(Icons.photo_album),
+      ),
     );
   }
 }
