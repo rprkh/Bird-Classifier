@@ -34,11 +34,17 @@ class _HomePageState extends State<HomePage> {
   String? numbers = "";
 
   _pickImage() async {
-    _pickedFile = await _picker.getImage(source: ImageSource.gallery);
+    _pickedFile = await _picker.getImage(
+        source: ImageSource.gallery,
+        maxWidth: 150,
+        maxHeight: 150,
+    );
     if(_pickedFile != null) {
       setState(() {
         _image = File(_pickedFile!.path);
       });
+
+
     }
   }
 
@@ -91,7 +97,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 25),
@@ -117,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                   child: Align(
                     alignment: Alignment.center,
                     child: Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 50, 0),
+                        padding: EdgeInsets.fromLTRB(30, 0, 50, 0),
                         child: Text(
                             "Please select an image",
                             style: TextStyle(
@@ -178,7 +184,7 @@ class _HomePageState extends State<HomePage> {
               height: 20,
             ),
             FlatButton(
-              minWidth: 200,
+              minWidth: 225,
               onPressed: () {
                 applyModelOnImage(File(_pickedFile!.path));
               },
@@ -196,7 +202,7 @@ class _HomePageState extends State<HomePage> {
               height: 10,
             ),
             SizedBox(
-              width: 200,
+              width: 225,
               child: RaisedButton(
                 onPressed: () {
                   Navigator.push(
@@ -221,7 +227,7 @@ class _HomePageState extends State<HomePage> {
               height: 10,
             ),
             SizedBox(
-              width: 200,
+              width: 225,
               child: RaisedButton(
                 onPressed: () {
                   Navigator.push(
@@ -241,6 +247,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 color: Colors.blue,
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
           ],
         ),

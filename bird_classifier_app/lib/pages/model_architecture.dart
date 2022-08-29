@@ -116,7 +116,7 @@ class _ModelArchitectureState extends State<ModelArchitecture> {
               ),
             ),
             SizedBox(
-              height: 25,
+              height: 30,
             ),
             Text(
               "Model Performance",
