@@ -43,8 +43,6 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         _image = File(_pickedFile!.path);
       });
-
-
     }
   }
 
