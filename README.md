@@ -11,17 +11,27 @@ Flutter App that can classify 400 different species of birds using MobileNetV2.
 ### Flutter App
 
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/1.png)
+<br>
+<br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/2.png)
+<br>
+<br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/3.png)
-<br/>
+<br>
+<br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/4.png)
+<br>
 <br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/5.png)
 <br>
+<br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/6.png)
+<br>
 <br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/7.png)
 <br>
+<br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/8.png)
+<br>
 <br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/9.png)
