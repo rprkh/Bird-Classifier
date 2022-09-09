@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'package:bird_classifier_app/pages/data_used.dart';
 import 'package:bird_classifier_app/pages/model_architecture.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 void main() => runApp(MaterialApp(
   initialRoute: '/',
@@ -33,12 +34,23 @@ class _HomePageState extends State<HomePage> {
   String? _name = "";
   String? numbers = "";
 
-  _pickImage() async {
+  pickImageFromCamera() async {
+    _pickedFile = await _picker.getImage(
+      source: ImageSource.camera,
+    );
+
+    if(_pickedFile != null) {
+      setState(() {
+        _image = File(_pickedFile!.path);
+      });
+    }
+  }
+
+  pickImageFromGalleryOrGDrive() async {
     _pickedFile = await _picker.getImage(
         source: ImageSource.gallery,
-        maxWidth: 150,
-        maxHeight: 150,
     );
+
     if(_pickedFile != null) {
       setState(() {
         _image = File(_pickedFile!.path);
@@ -58,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     var res = await Tflite.runModelOnImage(
         path: file.path,
         numResults: 400,
-        threshold: 0.5,
+        threshold: 0.3,
         imageMean: 127.5,
         imageStd: 127.5
     );
@@ -107,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: FileImage(File(_pickedFile!.path)),
-                    fit: BoxFit.contain
+                    fit: BoxFit.contain,
                   ),
                 ),
 
@@ -252,12 +264,22 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _pickImage();
-        },
-        child: Icon(Icons.photo_album),
+      floatingActionButton: SpeedDial(
+        animatedIcon: AnimatedIcons.menu_close,
         backgroundColor: Colors.amberAccent[400],
+        spacing: 5,
+        spaceBetweenChildren: 5,
+        closeManually: false,
+        children: [
+          SpeedDialChild(
+            child: Icon(Icons.camera),
+            onTap: () => pickImageFromCamera(),
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.photo_album),
+            onTap: () => pickImageFromGalleryOrGDrive(),
+          ),
+        ],
       ),
     );
   }

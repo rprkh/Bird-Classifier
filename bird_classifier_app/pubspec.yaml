@@ -38,6 +38,7 @@ dependencies:
   http: any
   tflite: ^1.1.2
   meta: ^1.1.8
+  flutter_speed_dial: ^4.3.0
 
 dev_dependencies:
   flutter_test:
