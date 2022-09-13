@@ -17,31 +17,31 @@ https://www.kaggle.com/datasets/gpiosenka/100-bird-species
 
 ### Flutter App
 
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/1.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/1.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/2.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/2.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/3.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/3.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/4.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/4.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/5.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/5.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/6.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/6.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/7.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/7.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/8.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/8.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/9.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/9.jpg)
 <br>
 <br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/10.png)
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/10.jpg)
