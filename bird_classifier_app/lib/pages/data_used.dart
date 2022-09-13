@@ -137,7 +137,7 @@ class _DataUsedState extends State<DataUsed> {
               height: 15,
             ),
             Image(
-              image: AssetImage("images/pelican.png"),
+              image: AssetImage("images/harlequin_duck.png"),
             ),
             SizedBox(
               height: 10,
@@ -146,7 +146,7 @@ class _DataUsedState extends State<DataUsed> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Label: Pelican",
+                    "Label: Harlequin Duck",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 18,
@@ -174,7 +174,7 @@ class _DataUsedState extends State<DataUsed> {
               height: 15,
             ),
             Image(
-              image: AssetImage("images/alpine_chough.png"),
+              image: AssetImage("images/abyssinian_ground_hornbill.png"),
             ),
             SizedBox(
               height: 10,
@@ -183,7 +183,7 @@ class _DataUsedState extends State<DataUsed> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Label: Alpine Chough",
+                    "Label: Abyssinian Ground Hornbill",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 18,
@@ -211,7 +211,7 @@ class _DataUsedState extends State<DataUsed> {
               height: 15,
             ),
             Image(
-              image: AssetImage("images/abyssinian_ground_hornbill.png"),
+              image: AssetImage("images/african_emerald_cuckoo.png"),
             ),
             SizedBox(
               height: 10,
@@ -220,7 +220,7 @@ class _DataUsedState extends State<DataUsed> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Label: Abyssinian Ground Hornbill",
+                    "Label: African Emerald Cuckoo",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 18,

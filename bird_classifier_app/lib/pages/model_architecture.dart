@@ -57,14 +57,14 @@ class _ModelArchitectureState extends State<ModelArchitecture> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Number of Epochs: ",
+                    "Epochs: ",
                     style: TextStyle(
                       color: Colors.amberAccent[200],
                       fontSize: 20,
                     ),
                   ),
                   Text(
-                    "20",
+                    "30 (early stopping at 17)",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 20,
@@ -86,7 +86,29 @@ class _ModelArchitectureState extends State<ModelArchitecture> {
                     ),
                   ),
                   Text(
-                    "64",
+                    "128",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 20,
+                    ),
+                  ),
+                ]
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Test Accuracy: ",
+                    style: TextStyle(
+                      color: Colors.amberAccent[200],
+                      fontSize: 20,
+                    ),
+                  ),
+                  Text(
+                    "93.99%",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 20,
@@ -109,8 +131,8 @@ class _ModelArchitectureState extends State<ModelArchitecture> {
               height: 15,
             ),
             Container(
-              width: 500,
-              height: 500,
+              width: 375,
+              height: 375,
               child: Image(
                 image: AssetImage("images/model_architecture.png"),
               ),
