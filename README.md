@@ -1,12 +1,19 @@
 # Bird Classifier
 
-Flutter App that can classify 400 different species of birds using MobileNetV2.
+Flutter App that can classify 400 different species of birds using MobileNetV2. The model achieves an accuracy of 93.99% on the test set.
+
+### Dataset Used
+
+https://www.kaggle.com/datasets/gpiosenka/100-bird-species
 
 ### Features
-- Upload an image from your phone gallery or from Google Drive
-- Identify the type of bird and the confidence of the classification
+
+- Take a picture from your phone camera
+- Upload an image from Google Drive or your mobile gallery
+- Identify the species of the bird
+- Get the confidence of the classification
 - Look at the data used for training the model
-- Look at the model architecture and performance
+- Understand the neural network architecture and performance
 
 ### Flutter App
 
@@ -35,3 +42,6 @@ Flutter App that can classify 400 different species of birds using MobileNetV2.
 <br>
 <br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/9.png)
+<br>
+<br>
+![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/10.png)
