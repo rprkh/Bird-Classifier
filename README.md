@@ -42,6 +42,3 @@ https://www.kaggle.com/datasets/gpiosenka/100-bird-species
 <br>
 <br>
 ![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/9.jpg)
-<br>
-<br>
-![Nav Bar](https://github.com/rprkh/Bird-Classifier/blob/main/bird_classifier_app/images/app_ui/10.jpg)
